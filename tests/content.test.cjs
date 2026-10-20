@@ -21,7 +21,7 @@ test("Start Here and 9 complete, uniquely routed activities", () => {
     if (!index) continue;
     assert.ok(!Object.hasOwn(exercise, "minutes"));
     if (exercise.liveDemo) {
-      assert.equal(exercise.prompts.length, 0);
+      assert.equal(exercise.prompts.length, exercise.id === "powerpoint" ? 1 : 0);
       assert.equal(exercise.reflection.length, 0);
       assert.ok(exercise.topics.length >= 2);
       assert.match(exercise.description, /This will be a live demo portion/);
@@ -42,9 +42,9 @@ test("Start Here and 9 complete, uniquely routed activities", () => {
   }
 });
 
-test("16 prompts with only the intentional Researcher comparison duplicate", () => {
+test("18 prompts with only the intentional Researcher comparison duplicate", () => {
   const prompts = exercises.slice(1).flatMap(item => item.prompts.map(prompt => prompt.text));
-  assert.equal(prompts.length, 16);
+  assert.equal(prompts.length, 18);
   assert.equal(new Set(prompts).size, prompts.length - 1);
   const research = exercises.find(item => item.id === "research-prioritize-prepare");
   const researcher = exercises.find(item => item.id === "researcher");
@@ -54,6 +54,23 @@ test("16 prompts with only the intentional Researcher comparison duplicate", () 
   assert.equal(researcher.topics.length, 3);
   assert.equal(exercises[9].id, "researcher");
   assert.doesNotMatch(JSON.stringify(exercises), /CCBA|Coca-Cola/i);
+});
+
+test("PowerPoint preserves the live demo and includes the exact sales journey prompt", () => {
+  const activity = exercises.find(item => item.id === "powerpoint");
+  assert.equal(activity.liveDemo, true);
+  assert.equal(activity.topics.length, 2);
+  assert.equal(activity.prompts[0].text, "Create a presentation about Grainger's sales journey: how it attracts, serves and keeps its customers. Cover how its business models shape the way different customers buy, and the role of its sellers, digital channels and services in building long-term relationships. Use recent public sources.");
+});
+
+test("activity 2 ends with the optional Reflect self-coaching prompt", () => {
+  const activity = exercises[2];
+  assert.equal(activity.id, "research-prioritize-prepare");
+  const prompt = activity.prompts.at(-1);
+  assert.equal(prompt.title, "Reflect");
+  assert.equal(prompt.kind, "Optional");
+  assert.match(prompt.note, /self-coaching partner/);
+  assert.equal(prompt.text, "Look at how I've worked over the last 30 days across my calendar, email, chats, and files. Start with what I'm doing well as a seller. Then find 2 or 3 habits where a small change would give me more time with customers or help me move deals forward faster. For each one, show me what you saw, why it matters, and one thing I can try this week.");
 });
 
 test("all application element references exist and script order is correct", () => {

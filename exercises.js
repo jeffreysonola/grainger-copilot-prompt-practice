@@ -26,7 +26,8 @@ globalThis.GRAINGER_EXERCISES = [
     setup: "Start in Copilot Chat. Use web sources for the research prompt and your approved work account for calendar, email, chat, and file context. Work IQ helps connect the work you can access.",
     prompts: [
       { title: "1a. Research where an account is spending", text: accountResearchQuestion },
-      { title: "1b. Prioritize my day and prep my #1 priority", text: "Help me prioritize my day as a seller. Review my calendar, emails, and recent work to identify the 3 customer or sales priorities that need my attention most today and explain why. For my #1 priority, find the most relevant emails, meetings, and files, summarize what I need to know, identify any open commitments or decisions, and recommend how I should prepare and what my next best action should be." }
+      { title: "1b. Prioritize my day and prep my #1 priority", text: "Help me prioritize my day as a seller. Review my calendar, emails, and recent work to identify the 3 customer or sales priorities that need my attention most today and explain why. For my #1 priority, find the most relevant emails, meetings, and files, summarize what I need to know, identify any open commitments or decisions, and recommend how I should prepare and what my next best action should be." },
+      { title: "Reflect", kind: "Optional", note: "Use Copilot as a self-coaching partner: recognize what is working, spot small changes in your selling habits, and choose one practical improvement to try this week. Review the supporting work context before accepting its observations.", text: "Look at how I've worked over the last 30 days across my calendar, email, chats, and files. Start with what I'm doing well as a seller. Then find 2 or 3 habits where a small change would give me more time with customers or help me move deals forward faster. For each one, show me what you saw, why it matters, and one thing I can try this week." }
     ],
     reflection: ["Check the fiscal year and public purchasing sources.", "Public purchasing totals alone do not establish your actual share of wallet; what sales data would you also need?", "Can you trace the priority briefing back to the original emails, meetings, and files?"]
   },
@@ -66,7 +67,10 @@ globalThis.GRAINGER_EXERCISES = [
       { title: "From source material to a customer story", text: "We'll demonstrate how Copilot can help shape a focused presentation around customer needs, a recommendation, and clear next steps." },
       { title: "Keep it on brand and grounded", text: "We'll explore working with an approved Grainger template and reviewing the draft for layout, clarity, and claims that need verification before sharing." }
     ],
-    prompts: [], reflection: []
+    prompts: [
+      { title: "Create a presentation about Grainger's sales journey", text: "Create a presentation about Grainger's sales journey: how it attracts, serves and keeps its customers. Cover how its business models shape the way different customers buy, and the role of its sellers, digital channels and services in building long-term relationships. Use recent public sources." }
+    ],
+    reflection: []
   },
   {
     id: "excel-forecast", title: "Forecast channel revenue", subtitle: "Excel · Baseline → Forecast → Explain",
