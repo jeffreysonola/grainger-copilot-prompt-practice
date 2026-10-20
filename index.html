@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hands-on Microsoft 365 Copilot prompt practice for Grainger sales teams.">
+  <title>Start Here | Grainger Copilot Prompt Practice</title>
+  <script>
+    (() => {
+      const param = new URLSearchParams(window.location.search).get("scoutTheme");
+      const theme =
+        param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="exercises.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to practice content</a>
+  <aside class="sidebar" aria-label="Exercise navigation">
+    <a class="brand" href="#start" aria-label="Grainger Copilot practice home">
+      <img src="assets/grainger-logo.png" alt="Grainger" width="234" height="55">
+    </a>
+    <div class="sidebar-title"><span class="eyebrow">Sales team learning</span><strong>Copilot<br>Prompt Practice</strong></div>
+    <p class="nav-label">YOUR PRACTICE PLAYBOOK</p>
+    <nav id="exercise-nav" aria-label="Choose an exercise"></nav>
+    <div class="sidebar-footer"><span class="status-dot" aria-hidden="true"></span><span id="activity-count"></span></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar">
+      <div><strong>Grainger Sales Team Prompt Practice</strong><p>Choose an exercise. Make it yours. Put Copilot to work.</p></div>
+      <div class="header-actions">
+        <a href="https://m365.cloud.microsoft/chat" target="_blank" rel="noopener noreferrer" class="button small">Open Copilot <span aria-hidden="true">&#8599;</span></a>
+        <button id="theme-toggle" class="icon-button" type="button" aria-label="Switch color theme">◐</button>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="breadcrumb"><span>THE SALES COPILOT PLAYBOOK</span><span id="position">START HERE</span></div>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy"><p class="eyebrow" id="exercise-kicker">WELCOME TO YOUR PRACTICE DAY</p><h1 id="page-title">Start Here:<br>Your Copilot Practice Day</h1><p id="page-description"></p></div>
+        <aside class="focus-card" aria-label="Learning focus"><span class="eyebrow">THE SKILL YOU'RE BUILDING</span><strong id="skill"></strong><p id="skill-description"></p><div class="focus-rule"></div><span id="app-label"></span></aside>
+      </section>
+      <div class="guide-note" id="guide-note" role="note"><strong>Your participant-guide playbook.</strong> Copy the prompts below into your approved Copilot experience. Replace bracketed placeholders, use the required workbooks, and review every response.</div>
+      <div id="landing">
+        <section class="intro-grid" aria-label="What you will get from today">
+          <article class="intro-card"><span class="number">01</span><h2>Work with your real priorities</h2><p>Prepare for customer conversations, research accounts, and follow through on the work already on your agenda.</p></article>
+          <article class="intro-card"><span class="number">02</span><h2>Learn by doing</h2><p>Move from short demonstrations into hands-on practice using realistic sales scenarios across Microsoft 365.</p></article>
+          <article class="intro-card"><span class="number">03</span><h2>Leave with repeatable habits</h2><p>Build prompts you can reuse for account preparation, discovery, follow-ups, analysis, and clearer communication.</p></article>
+        </section>
+        <section class="panel" aria-labelledby="journey-title">
+          <p class="eyebrow">WHAT THE DAY LOOKS LIKE</p><h2 id="journey-title">From first prompt to sales workflow</h2>
+          <p class="section-copy">Start with the essentials. Practice with real work. Build confidence in how Copilot supports your judgment, not replaces it.</p>
+          <div class="journey-grid">
+            <article><span class="journey-dot">01</span><h3>Ground Copilot</h3><p>Understand how Copilot uses the files, emails, meetings, and sources you can access.</p></article>
+            <article><span class="journey-dot">02</span><h3>Practice core workflows</h3><p>Prepare your day, research a customer, and turn information into a better conversation.</p></article>
+            <article><span class="journey-dot">03</span><h3>Connect your work</h3><p>Use Teams, Outlook, Word, Excel, and PowerPoint to move from insight to action.</p></article>
+            <article><span class="journey-dot">04</span><h3>Make it yours</h3><p>Refine your prompts and choose the habits that will help you every week.</p></article>
+          </div>
+        </section>
+        <section class="panel" aria-labelledby="prompting-title">
+          <p class="eyebrow">THE ART AND SCIENCE OF PROMPTING</p><h2 id="prompting-title">Give Copilot the ingredients for a useful response</h2>
+          <p class="section-copy">You don't need a perfect prompt. Start with the outcome you need, then add the details that make the response useful.</p>
+          <div class="ingredient-grid">
+            <article><span class="pill">Goal</span><h3>What do you want Copilot to do?</h3><p>State the task clearly: summarize, compare, analyze, draft, or recommend.</p></article>
+            <article><span class="pill">Context</span><h3>Why, and who is involved?</h3><p>Add the customer situation, audience, priorities, and constraints.</p></article>
+            <article><span class="pill">Source</span><h3>What should Copilot use?</h3><p>Point to the relevant file, email thread, meeting, workbook, or web source.</p></article>
+            <article><span class="pill">Expectations</span><h3>What should the result look like?</h3><p>Specify format, tone, length, evidence, and the next action you need.</p></article>
+          </div>
+          <div class="tip"><strong>Keep the conversation going.</strong> Review the response, challenge assumptions, add missing context, and ask Copilot to improve the result.</div>
+        </section>
+        <section class="ready-panel"><div><p class="eyebrow">A FEW THINGS BEFORE YOU START</p><h2>Your judgment stays in the driver's seat.</h2><p>Use your approved work account and permitted sources. Have your channel forecast workbook, Strategic Alliance partner workbook, and approved presentation template ready. Verify facts, pricing, product suitability, and customer commitments.</p></div><a class="button primary" href="#personalization">Let's get started <span aria-hidden="true">&#8594;</span></a></section>
+      </div>
+      <section id="practice" hidden aria-label="Practice exercise">
+        <div class="exercise-toolbar"><div><p class="eyebrow" id="practice-kicker">LEARN BY DOING</p><h2 id="practice-title">Your practice prompts</h2></div></div>
+        <div class="setup" id="setup"></div>
+        <div class="intro-grid" id="demo-topics" hidden></div>
+        <div id="prompt-list"></div>
+        <section class="panel reflection" id="reflection"><p class="eyebrow">PAUSE &amp; REFLECT</p><h2>Make the response work harder</h2><ul id="reflection-list"></ul></section>
+      </section>
+      <footer class="page-footer"><button id="previous" class="button" type="button">← Previous</button><span id="footer-position"></span><button id="next" class="button primary" type="button">Next exercise →</button></footer>
+      <p class="disclaimer">A practice resource for Grainger sales teams. Not an AI service. Prompts run in your organization's approved Copilot experience; features depend on your license and permissions.</p>
+    </main>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <dialog id="copy-dialog"><h2>Copy this prompt</h2><p>Automatic copying isn't available in this browser. Select the text below and copy it manually.</p><textarea id="manual-copy" aria-label="Prompt to copy" readonly></textarea><form method="dialog"><button class="button primary">Done</button></form></dialog>
+  <noscript><p class="noscript">Enable JavaScript to navigate the practice exercises. The Start Here content is still available below.</p></noscript>
+</body>
+</html>
